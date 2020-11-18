@@ -4,3 +4,21 @@ logging:
 
 server:
   port: 9000
+
+
+
+myname: 这是一个springboot 项目
+
+booklibraries:
+  location: 中国昆明
+  books:
+   - name: 围城
+     miaoshu: 钱钟书
+   - name: 狂人日记
+     miaoshu: 鲁迅
+
+mywork:
+  name: 红塔银行
+  email: buptxuixn@163.com
+
+
