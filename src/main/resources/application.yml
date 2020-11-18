@@ -1,0 +1,6 @@
+#logging
+logging:
+  config: classpath:log/logback.xml
+
+server:
+  port: 9000
