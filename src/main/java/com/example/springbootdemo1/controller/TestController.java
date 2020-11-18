@@ -1,6 +1,7 @@
 package com.example.springbootdemo1.controller;
 
 import com.example.springbootdemo1.entity.Book;
+import com.example.springbootdemo1.exception.MyException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +13,10 @@ import java.util.stream.Collectors;
 @RequestMapping("/book")
 @RestController
 public class TestController {
+
+    /*
+    * 测试restful风格的接口
+    * */
     List<Book>  books=new ArrayList<>();
     @RequestMapping("/add")
     public ResponseEntity test(@RequestBody Book book){
@@ -31,4 +36,15 @@ public class TestController {
         List<Book> results=books.stream().filter(book -> book.getName().equals(name)).collect(Collectors.toList());
         return ResponseEntity.ok(books);
     }
+
+    /*
+    * 测试_异常的功能
+    * */
+    @RequestMapping("/exception")
+    public ResponseEntity test4(){
+        System.out.println("请求进来了");
+        throw new MyException();
+    }
+
+
 }
